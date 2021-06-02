@@ -6,7 +6,7 @@ from os import environ
 from datetime import datetime,date,timedelta
 year = int(environ['DAY'].split('-')[0])
 month = int(environ['DAY'].split('-')[1].lstrip('0'))
-date = int(environ['DAY'].split('-')[2].lstrip('0'))
+day = int(environ['DAY'].split('-')[2].lstrip('0'))
 count_day = date(year,month,day)
 greets = ['Good Morning!','Hello There!','සුභ උදෑසනක්','නැගිටපන් යකෝ']
 def sms():
