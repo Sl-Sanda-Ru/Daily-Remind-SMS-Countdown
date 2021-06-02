@@ -1,5 +1,5 @@
 {
-    "name": "Daily-Remind-SMS",
+    "name": "Daily-Remind-SMS-Countdown",
     "description": "With This Program You Can Set A Daily Reminder With SMS",
     "logo": "https://pics.freeicons.io/uploads/icons/png/6029094171580282643-512.png",
     "keywords": ["Reminder", "SMS", "countdown"],
@@ -16,6 +16,11 @@
             "description": "The Day For CountDown. Format XXXX-XX-XX",
             "required": true,
             "value": "2099-01-01"
+        },
+        "TIME": {
+            "description": "Time To Send The SMS Daily In UTC Time",
+            "required": true,
+            "value": "00:30"
         }
     },
     "buildpacks": [{
