@@ -21,6 +21,16 @@
             "description": "Time To Send The SMS Daily In UTC Time",
             "required": true,
             "value": "00:30"
+        },
+        "GREETS": {
+            "description": "Greeting Words,This Goes Before The Message. Format Greet1,Greet2",
+            "required": true,
+            "value": "Good Morning!,Hello There!,සුභ උදෑසනක්,නැගිටපන් යකෝ"
+        },
+        "MESSAGE": {
+            "description": "The Message. This Goes Between The Greet & Remaing Days",
+            "required": true,
+            "value": "ඒලෙවල් වලට තව දින"
         }
     },
     "buildpacks": [{
