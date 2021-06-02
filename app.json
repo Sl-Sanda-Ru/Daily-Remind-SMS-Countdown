@@ -1,0 +1,24 @@
+{
+    "name": "Daily-Remind-SMS",
+    "description": "With This Program You Can Set A Daily Reminder With SMS",
+    "logo": "https://i.hizliresim.com/6Bbj7i.jpg",
+    "keywords": ["Reminder", "SMS", "countdown"],
+    "repository": "https://github.com/Sl-Sanda-Ru/Daily-Remind-SMS-Countdown",
+    "website":   "https://t.me/Sl_Sanda_Ru",
+    "success_url": "https://t.me/Sl_Sanda_Ru",
+    "env": {
+        "NUM": {
+            "description": "The Recipient Phone Number To Send SMS Reminder. Format +947xxxxxxxx",
+            "required": true,
+            "value": "94771234567"
+        },
+        "DAY": {
+            "description": "The Day For CountDown. Format XXXX-XX-XX",
+            "required": true,
+            "value": "2099-01-01"
+        }
+    },
+    "buildpacks": [{
+      "url": "heroku/python"
+      }]
+  }
