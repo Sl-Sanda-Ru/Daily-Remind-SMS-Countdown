@@ -9,6 +9,7 @@ month = int(environ['DAY'].split('-')[1].lstrip('0'))
 day = int(environ['DAY'].split('-')[2].lstrip('0'))
 count_day = date(year,month,day)
 greets = environ['GREETS'].split(',')
+message = environ['MESSAGE']
 def sms():
 	tday = datetime.utcnow() + timedelta(hours=5,minutes=30)
 	tday = tday.date()
