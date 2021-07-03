@@ -19,7 +19,6 @@ def sms():
 	tday = tday.date()
 	rem = count_day - tday
 	rem = rem.days
-	data = {'phone':,'message':f'{choice(greets)} {message} {rem}යි.','key':'textbelt'}
 	message = client.messages.create(body=f'{choice(greets)} {message} {rem}යි.',from_=environ['FROM'],to=environ['NUM'])
 	print(message.sid)
 schedule.every().day.at(environ['TIME']).do(sms)
