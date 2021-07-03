@@ -1,9 +1,13 @@
 import schedule
+from twilio.rest import Client
 from time import sleep
 from requests import post
 from random import choice
 from os import environ
 from datetime import datetime,date,timedelta
+sid = environ['SID']
+token = environ['TOKEN']
+client = Client(sid,token)
 year = int(environ['DAY'].split('-')[0])
 month = int(environ['DAY'].split('-')[1].lstrip('0'))
 day = int(environ['DAY'].split('-')[2].lstrip('0'))
@@ -15,9 +19,9 @@ def sms():
 	tday = tday.date()
 	rem = count_day - tday
 	rem = rem.days
-	data = {'phone':environ['NUM'],'message':f'{choice(greets)} {message} {rem}යි.','key':'textbelt'}
-	req = post('https://textbelt.com/text',data=data)
-	print(req.json())
+	data = {'phone':,'message':f'{choice(greets)} {message} {rem}යි.','key':'textbelt'}
+	message = client.messages.create(body=f'{choice(greets)} {message} {rem}යි.',from_=environ['FROM'],to=environ['NUM'])
+	print(message.sid)
 schedule.every().day.at(environ['TIME']).do(sms)
 while True:
     schedule.run_pending()
