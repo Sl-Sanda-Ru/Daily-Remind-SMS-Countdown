@@ -1,7 +1,6 @@
 import schedule
 from twilio.rest import Client
 from time import sleep
-from requests import post
 from random import choice
 from os import environ
 from datetime import datetime,date,timedelta
