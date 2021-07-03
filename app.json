@@ -7,13 +7,29 @@
     "website":   "https://t.me/Sl_Sanda_Ru",
     "success_url": "https://t.me/Sl_Sanda_Ru",
     "env": {
-        "NUM": {
-            "description": "The Recipient Phone Number To Send SMS Reminder. Format +947xxxxxxxx",
+        "SID": {
+            "description": "Your Twilio Account SID You Can Get This Free Visit www.twilio.com",
             "required": true,
-            "value": "94771234567"
+            "value": "kTZ9rKVGsYZHdxXq2E7QUqpQdhABLe3VhB"
+        },
+        "TOKEN": {
+            "description": "Your Twilio Account Authtoken You Can Get This Free Visit www.twilio.com",
+            "required": true,
+            "value": "xMqStCV6g7TPVJs3gdaUMBsV9AJG6VfH"
+        },
+
+        "NUM": {
+            "description": "The Recipient Phone Number To Send SMS Reminder. Format +947xxxxxxxx You Have To Verify This Number In Twilio",
+            "required": true,
+            "value": "+94771234567"
+        },
+        "FROM": {
+            "description": "The Twilio Phone Number You Can Copy This From Your Twilio Console Page",
+            "required": true,
+            "value": "+11234567890"
         },
         "DAY": {
-            "description": "The Day For CountDown. Format XXXX-XX-XX",
+            "description": "The Day For Countdown. Format XXXX-XX-XX",
             "required": true,
             "value": "2099-01-01"
         },
