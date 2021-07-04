@@ -18,8 +18,8 @@ def sms():
 	tday = tday.date()
 	rem = count_day - tday
 	rem = rem.days
-	message = client.messages.create(body=f'{choice(greets)} {message} {rem}යි.',from_=environ['FROM'],to=environ['NUM'])
-	print(message.sid)
+	req = client.messages.create(body=f'{choice(greets)} {message} {rem}යි.',from_=environ['FROM'],to=environ['NUM'])
+	print(req.sid)
 schedule.every().day.at(environ['TIME']).do(sms)
 while True:
     schedule.run_pending()
