@@ -14,13 +14,15 @@ count_day = date(year,month,day)
 greets = environ['GREETS'].split(',')
 message = environ['MESSAGE']
 def sms():
-	tday = datetime.utcnow() + timedelta(hours=5,minutes=30)
-	tday = tday.date()
-	rem = count_day - tday
-	rem = rem.days
-	req = client.messages.create(body=f'{choice(greets)} {message} {rem}යි.',from_=environ['FROM'],to=environ['NUM'])
+    today_str = datetime.today().strftime('%A')
+	today = (datetime.utcnow() + timedelta(hours=5,minutes=30)).date()
+	remaining_days = (count_day - today).days
+	req = client.messages.create(body=f'Today Is {today_str}. {choice(greets)} {message} {rem}යි.',from_=environ['FROM'],to=environ['NUM'])
 	print(req.sid)
-schedule.every().day.at(environ['TIME']).do(sms)
-while True:
-    schedule.run_pending()
-    sleep(60)
+def main():
+    schedule.every().day.at(environ['TIME']).do(sms)
+if __name__ == '__main__':
+    main()
+    while True:
+        schedule.run_pending()
+        sleep(60)
