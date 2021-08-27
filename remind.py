@@ -17,7 +17,7 @@ def sms():
 	today_str = datetime.today().strftime('%A')
 	today = (datetime.utcnow() + timedelta(hours=5,minutes=30)).date()
 	remaining_days = (count_day - today).days
-	req = client.messages.create(body=f'Today Is {today_str}. {choice(greets)} {message} {rem}යි.',from_=environ['FROM'],to=environ['NUM'])
+	req = client.messages.create(body=f'Today Is {today_str}. {choice(greets)} {message} {remaining_days}යි.',from_=environ['FROM'],to=environ['NUM'])
 	print(req.sid)
 def main():
 	schedule.every().day.at(environ['TIME']).do(sms)
